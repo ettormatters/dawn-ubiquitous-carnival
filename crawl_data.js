@@ -6,8 +6,8 @@ let id_full_arr = []
 const c = new Crawler({
 
     maxConnections : 10,
-    mode : 'no-cors',
-    credentials: 'same-origin',
+    //mode : 'no-cors',
+    //credentials: 'same-origin',
     headers: {
                 "Content-Type": "application/json",
                 "Accept":"application/json",
@@ -41,7 +41,7 @@ const c = new Crawler({
 });
 
 c.queue({
-    uri: 'http://cors.io/?https://medium.com/dawn-cau',
+    uri: 'http://anyorigin.com/go?url=https://medium.com/dawn-cau',
 });
 
 // count in array
