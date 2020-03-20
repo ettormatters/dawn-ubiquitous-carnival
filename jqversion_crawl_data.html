@@ -4,6 +4,7 @@
 </head>
 <body>
     <script>
+    /*
         // Create the XHR object.
             function createCORSRequest(method, url) {
                 var xhr = new XMLHttpRequest();
@@ -47,6 +48,7 @@
                 xhr.send();
             }
             makeCorsRequest();
+            */
         /*$.get( "https://medium.com/dawn-cau", function( data ) {
            console.log(data);
             alert( "Load was performed." );
@@ -63,20 +65,32 @@
         xhr.open('GET', 'https://medium.com/dawn-cau', true);
         xhr.send(null);
         */
-        /*$.ajax({
-            url: "https://medium.com/dawn-cau",
-            type: "POST",
-            crossDomain: true,
-            //data: JSON.stringify(somejson),
-            dataType: "json",
-            success: function (response) {
-                var resp = JSON.parse(response)
-                alert(resp.status);
-            },
-            error: function (xhr, status) {
-                alert("error");
+       /*$.ajaxPrefilter(function( options ) {
+            if ( options.crossDomain ) {
+                options.url = "https://medium.com/dawn-cau";
+                options.crossDomain = true;
             }
         });*/
+        /*$.getJSON("https://medium.com/dawn-cau/?callback=?", 
+            function(data) {
+                    console.log(data)
+            }
+        );*/
+        
+
+        $.ajax({
+            url: "https://medium.com/dawn-cau",
+            type: "GET",
+            //dataType : 'jsonp',
+            //jsonpCallback: "callback",
+            success: function (response) {
+                var resp = JSON.parse(response)
+                console.log(resp)
+            },
+            error: function (xhr, status) {
+                console.log(status)
+            }
+        });
 
     </script>
 </body>
