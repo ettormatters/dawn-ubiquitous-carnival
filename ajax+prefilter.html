@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<body>
+    <script>
+       $.ajaxPrefilter(function( options ) {
+            if ( options.crossDomain ) {
+                options.url = "https://medium.com/dawn-cau";
+                options.crossDomain = true;
+            }
+        });
+
+        $.getJSON("https://medium.com/dawn-cau/?callback=?", 
+            function(data) {
+                    console.log(data)
+            }
+        );    
+    </script>
+</body>
+</html>

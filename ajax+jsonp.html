@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            url: "https://medium.com/dawn-cau",
+            type: "GET",
+            dataType : 'jsonp',
+            jsonpCallback: "callback",
+            success: function (response) {
+                var resp = JSON.parse(response)
+                console.log(resp)
+            },
+            error: function (xhr, status) {
+                console.log(status)
+            }
+        });
+    </script>
+</body>
+</HTML>
